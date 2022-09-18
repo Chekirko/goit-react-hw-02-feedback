@@ -1,23 +1,28 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import { Buttons, ButtonsItem, Button } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ onLeaveFeedback }) => {
   return (
-    <ul>
-      <li>
-        <button type="button" name="good" onClick={onLeaveFeedback}>
+    <Buttons>
+      <ButtonsItem>
+        <Button type="button" name="good" onClick={onLeaveFeedback}>
           Good
-        </button>
-      </li>
-      <li>
-        <button type="button" name="neutral" onClick={onLeaveFeedback}>
+        </Button>
+      </ButtonsItem>
+      <ButtonsItem>
+        <Button type="button" name="neutral" onClick={onLeaveFeedback}>
           Neutral
-        </button>
-      </li>
-      <li>
-        <button type="button" name="bad" onClick={onLeaveFeedback}>
+        </Button>
+      </ButtonsItem>
+      <ButtonsItem>
+        <Button type="button" name="bad" onClick={onLeaveFeedback}>
           Bad
-        </button>
-      </li>
-    </ul>
+        </Button>
+      </ButtonsItem>
+    </Buttons>
   );
+};
+
+Notification.propTypes = {
+  onLeaveFeedback: PropTypes.func.isRequired,
 };

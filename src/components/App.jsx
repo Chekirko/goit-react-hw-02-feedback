@@ -33,22 +33,23 @@ export class App extends Component {
   }
 
   render() {
-    return (
-      <Section title="Please leave feedback">
-        <FeedbackOptions onLeaveFeedback={this.handleIncrement} />
+    return (      
+        <Section title="Please leave feedback">
+          <FeedbackOptions onLeaveFeedback={this.handleIncrement} />
 
-        {!this.countTotalFeedback() ? (
-          <Notification message="There is no feedback" />
-        ) : (
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
-        )}
-      </Section>
+          {!this.countTotalFeedback() ? (
+            <Notification message="There is no feedback" />
+          ) : (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          )}
+        </Section>
+      
     );
   }
 }
